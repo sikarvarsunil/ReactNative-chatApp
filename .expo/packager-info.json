@@ -1,5 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19000
+  "expoServerPort": null,
+  "packagerPort": 19000,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://ah-sw3.anonymous.reactnative-chatapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.ah-sw3.anonymous.reactnative-chatapp.exp.direct",
+  "ngrokPid": 5453,
+  "webpackServerPort": 19006
 }

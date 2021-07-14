@@ -6,13 +6,14 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, View } from 'react-native';
-import {Octicons, MaterialCommunityIcons} from '@expo/vector-icons'
+import { ColorSchemeName, View, Image } from 'react-native';
+import {Octicons, MaterialCommunityIcons, MaterialIcons, FontAwesome5} from '@expo/vector-icons'
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from '../constants/Colors'
+import ChatRoomScreen from '../screens/ChatRoomScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -54,7 +55,50 @@ function RootNavigator() {
             <MaterialCommunityIcons name="dots-vertical" size={24} color="white"/>
           </View>
       }}/>
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen 
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={({ route }) => ({
+          title: route?.params?.name,
+          headerTitleContainerStyle: {
+            left: 85,
+          },
+          headerTitleStyle: {
+            fontWeight: 800,
+          },
+          headerBackTitleVisible: false,
+          headerBackImage: () => <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            width: 60,
+          }}>
+            <MaterialIcons name="chevron-left" size={34} color="white"/>
+            <Image
+              style={{ width: 30, height: 30, borderRadius: 100, paddingRight: 5, }}
+              source={{uri: route?.params?.avatar}}
+              resizeMode='contain'
+            /></View>,
+          headerRight: () => <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            width: 80,
+            marginRight: 10,
+            paddingRight: 5
+          }}>
+              <FontAwesome5 name="video" size={20} color="white"/>
+              <MaterialIcons name="call" size={20} color="white"/>
+              <MaterialCommunityIcons name="dots-vertical" size={20} color="white"/>
+            </View>
+        })}
+      />
+      <Stack.Screen
+        name="NotFound"
+        component={NotFoundScreen}
+        options={{ title: 'Oops!' }}
+      />
     </Stack.Navigator>
   );
 }

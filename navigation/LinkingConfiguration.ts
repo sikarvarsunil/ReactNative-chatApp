@@ -34,6 +34,7 @@ export default {
           }
         },
       },
+      ChatRoom: 'ChatRoom',
       NotFound: '*',
     },
   },

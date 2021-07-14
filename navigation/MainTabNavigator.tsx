@@ -85,7 +85,6 @@ function ChatsNavigator() {
       <ChatsStack.Screen
         name="ChatsScreen"
         component={ChatScreen}
-        st
       />
     </ChatsStack.Navigator>
   );
