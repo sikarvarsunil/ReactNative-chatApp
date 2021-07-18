@@ -27,7 +27,7 @@ const ChatMessage = (props: ChatMessageProps) => {
         }}>
           {isMyMessage() && <Text style={styles.msgName}>{message?.user.name }</Text>}
           <Text style={styles.msgText}>{message?.content }</Text>
-          {message.createdAt && <Text style={styles.timestamp}>{dayjs(message?.createdAt).fromNow()}</Text>}
+          {message.createdAt && <Text style={styles.timestamp}>{dayjs(new Date(message.createdAt)).fromNow()}</Text>}
         </View>
     </View>
   )

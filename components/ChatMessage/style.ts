@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   msgText: {
     fontSize: 14,
-    fontWeight: "700",
+    fontWeight: "600",
   }
 });
 

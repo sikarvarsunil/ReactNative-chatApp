@@ -14,6 +14,7 @@ import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from '../constants/Colors'
 import ChatRoomScreen from '../screens/ChatRoomScreen';
+import ContactScreen from '../screens/ContactScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -64,7 +65,7 @@ function RootNavigator() {
             left: 85,
           },
           headerTitleStyle: {
-            fontWeight: 800,
+            fontWeight: "bold",
           },
           headerBackTitleVisible: false,
           headerBackImage: () => <View
@@ -93,6 +94,10 @@ function RootNavigator() {
               <MaterialCommunityIcons name="dots-vertical" size={20} color="white"/>
             </View>
         })}
+      />
+      <Stack.Screen
+        name="Contact"
+        component={ContactScreen}
       />
       <Stack.Screen
         name="NotFound"

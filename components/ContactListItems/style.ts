@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     padding: 10,
     width: '100%'
   },
@@ -24,16 +24,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#000'
   },
-  desc: {
+  status: {
     fontSize: 12,
     color: '#ccc',
     width: 200,
   },
-  timestamp: {
-    fontSize: 12,
-    color: '#ccc',
-    justifyContent: 'flex-end'
-  }
 });
 
 export default styles;
